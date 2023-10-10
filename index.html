@@ -1,59 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
 
     <title>Fight Predictor</title>
-</head>
-<body>
-    <header>
-        UFC Fight Predictor
-    </header>
+  </head>
+  <body>
+    <header>UFC Fight Predictor</header>
 
     <main class="main-top">
-<input type="search" class="search-fighterA">
+      <section class="searchFighterA">
+        <label for="fighters">SELECT A FIGHTER:</label>
+      </section>
 
-    </input>
+      <form class="fighterInput">
+        <h2 class="card-header">Fighter Input</h2>
+        <div class="input-containerLg">
 
-<section class="fighter-input">
+       <section class="row-container">
+        <h5 class="row-header">NAME & TOTAL FIGHTS</h5>
+        <section class="input-row">
+          <input type="text" id="firstName" placeholder="First Name" required/>
+        <input type="text" id="lastName" placeholder="Last Name" require/>
+        <input type="number" id="total-fights" name="total-fights" min="1" max="100" step="1" placeholder="Total Fights" require/> 
+        </section>
+       </section>
 
+       <section class="row-container">
+        <h5 class="row-header">UFC FIGHTS AND UFC FIGHT TIME</h5>
+        <section class="input-row">
+          <input type="number" id="ufc-fights" name="ufc-fights" min="1" max="100" step="1" placeholder="UFC Fights" require/> 
+          <input type="number" id="fight-mins" name="fight-mins" min="1" max="1000" step="1" placeholder="Fight Mins" require/> 
+          <input type="number" id="fight-secs" name="fight-secs" min="1" max="60" step="1" placeholder="Fight secs" require/> 
+      
+        </section>
+       </section>
 
+       <section class="row-container">
+        <h5 class="row-header">STRIKING</h5>
+        <section class="input-row">
+          <input type="number" id="striking-acc" name="striking-acc" min=".01" max=".99" step=".01" placeholder="Acc %" require/> 
+          <input type="number" id="striking-def" name="striking-def" min=".01" max=".99" step=".01" placeholder="Def %" require/> 
+          <input type="number" id="strikes-Lpm" name="strikes-Lpm" min=".01" max="15" step=".01" placeholder="Landed/min" require/> 
+          <input type="number" id="strikes-Apm" name="strikes-Lpm" min=".01" max="15" step=".01" placeholder="Absorbed / min" require/> 
+        </section>
+       </section>
+       <section class="row-container">
+        <h5 class="row-header">STRIKING POWER</h5>
+        <section class="input-row">
+          <input type="number" id="kd-per15" name="kd-per15" min="0.01" max="15" step=".01" placeholder="Knockdowns / 15 Mins" require/> 
+        </section>
+       </section>
 
-</section>
+       <section class="row-container">
+        <h5 class="row-header">STRIKING DISTRIBUTION</h5>
+        <section class="input-row">
+          <input type="number" id="strikes-standing" name="strikes-standing" min=".01" max=".99" step=".01" placeholder="% Strikes Standing" require/> 
+        <input type="number" id="strikes-clinch" name="strikes-clinch" min=".01" max=".99" step=".01" placeholder="% Strikes Clinch" require/> 
+        <input type="number" id="strikes-ground" name="strikes-ground" min=".01" max=".99" step=".01" placeholder="% Strikes Ground" require/> 
+        </section>
+       </section>
 
-<input type="search" class="search-fighterB">
+       <section class="row-container">
+        <h5 class="row-header">GRAPPLING</h5>
+        <section class="input-row">
+          <input type="number" id="td-acc" name="td-acc" min=".01" max=".99" step=".01" placeholder="Takedown Acc %" require/> 
+          <input type="number" id="td-def" name="td-def" min=".01" max=".99" step=".01" placeholder="Takedown Def %" require/> 
+          <input type="number" id="td-Lpm" name="td-Lpm" min=".01" max=".99" step=".01" placeholder="Landed / min" require/> 
+        
+       </section>
+       
+       <section class="row-container">
+        <h5 class="row-header">WIN DISTRIBUTION</h5>
+        <section class="input-row">
+          <input type="number" id="win-dec" name="win-dec" min="0" max="100" step="1" placeholder="DEC Wins" require/> 
+          <input type="number" id="win-ko" name="win-ko" min="0" max="100" step="1" placeholder="KO Wins" require/> 
+          <input type="number" id="win-sub" name="win-sub" min="0" max="100" step="1" placeholder="SUB wins" require/> 
+        </section>
+       </section>
 
-    </input>
+       <section class="row-container">
+        <h5 class="row-header">LOSS DISTRIBUTION</h5>
+        <section class="input-row">
+          <input type="number" id="loss-dec" name="loss-dec" min="0" max="100" step="1" placeholder="DEC Losses" require/> 
+          <input type="number" id="loss-ko" name="loss-ko" min="0" max="100" step="1" placeholder="KO Losses" require/> 
+          <input type="number" id="loss-sub" name="loss-sub" min="0" max="100" step="1" placeholder="SUB Losses" require/> 
+        </section>
+       </section>
 
+       <button class="register-fighter">REGISTER</button>
+
+        </div>
+      </form>
+
+      <section class="searchFighterB">
+        <h2 class="card-header">Search Fighter B</h2>
+      </section>
     </main>
 
     <main class="main-bottom">
+      <section class="fighter1-stats">
+        <h2 class="card-header">Blue Corner Stats</h2>
+      </section>
 
-        <section class="fighter1-stats">
-            <h2>Blue Corner Stats</h2>
-        </section>
+      <section class="fightCard-cont">
+        <h2 class="card-header">Red Corner Stats</h2>
+      </section>
 
-        <section class="fightCard-cont">
-            <h2>Red Corner Stats</h2>
-        </section>
-
-        <section class="fighter2-stats">
-            <h2>Red Corner Stats</h2>
-
-        </section>
-
+      <section class="fighter2-stats">
+        <h2 class="card-header">Red Corner Stats</h2>
+      </section>
     </main>
-<section class="footer-container">
-
-    <footer>
-
-    </footer>
-
-</section>
-    
+    <section class="footer-container">
+      <footer></footer>
+    </section>
 
     <script src="./assets/script.js"></script>
-</body>
+  </body>
 </html>
